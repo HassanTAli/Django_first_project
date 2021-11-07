@@ -120,6 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[os.path.join(BASE_DIR,'main_static')]
-STATIC_ROOT = '/home/hassantali/Django/static_root'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 # \home\hassantali\Django\static_root
