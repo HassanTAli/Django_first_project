@@ -17,3 +17,6 @@ class Movie(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+class Cast(models.Model):
+    first_name = models.CharField('Actor Name',max_length=255)
