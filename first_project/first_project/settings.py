@@ -128,6 +128,7 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT =  '/home/hassantali/Django/static_root'
 MEDIA_ROOT =  '/home/hassantali/Django/media_root'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS =[os.path.join(BASE_DIR,'staticfiles')]
 

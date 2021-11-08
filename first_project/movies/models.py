@@ -13,10 +13,23 @@ class Movie(models.Model):
     production_date = models.DateField(null=True,blank=True)
     creation_date = models.DateTimeField(auto_now_add=True)
     modification_date = models.DateTimeField(auto_now=True)
-    # banner = models.ImageField()
-
-    def __str__(self) -> str:
+    banner = models.ImageField(upload_to='movie/images')
+    video = models.FileField(upload_to='movie/videos')
+    
+    def __str__(self):
         return self.name
+    
     
 class Cast(models.Model):
     first_name = models.CharField('Actor Name',max_length=255)
+    title = models.CharField(max_length=100)
+    is_free = models.BooleanField(default=True)
+    date_published = models.DateField(null=True,blank=True)
+    profile_image = models.ImageField(upload_to='profile/images')
+    
+    def __str__(self):
+        return self.first_name
+    
+    
+class Category(models.Model):
+    pass
