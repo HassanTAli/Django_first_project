@@ -7,7 +7,7 @@
         <form method="post" action="{% url 'movie:movie_create' %}">
             {% csrf_token %}
             
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="MovieName">MovieName</label>
                 <input type="text" name="name" class="form-control" id="MovieName" placeholder="Name">
             </div>
@@ -21,7 +21,9 @@
                 <label for="MovieLikes"> Like</label>
                 <input type="number" name="likes" class="form-control" id="MovieLikes"
                        placeholder="Priority">
-            </div>
+            </div> -->
+
+            {{form.as_p}}
             <button type="submit" class="btn btn-primary">Submit</button>
             <div class="text-center mt-5" style="display:inline">
                 <a href="{% url 'movie:movie_index'%}">

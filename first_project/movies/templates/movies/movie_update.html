@@ -3,10 +3,14 @@
 <div class="container">
     <div class="row">
         <div class="text-center col-12">
-            <form method="post" action="{% url 'movie:movie-update' movie.id %}">
+            <form method="post" action="{% url 'movie:movie_update' movie.id %}">
+                {% csrf_token %}
+
+                {{form.as_p}}
+
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <div class="text-center mt-5" style="display:inline">
-                    <a href="{% url 'movie:movie-index'  %}">
+                    <a href="{% url 'movie:movie_index'  %}">
                         <button type="button" class="btn btn-info">
                             Back to list
                         </button>

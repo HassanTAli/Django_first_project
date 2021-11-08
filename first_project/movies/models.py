@@ -7,12 +7,13 @@ class Movie(models.Model):
     active = models.BooleanField(default=True)
     name = models.CharField('Movie Name',max_length=255)
     description = models.TextField('Movie Description')
-    likes = models.ImageField(default=0)
+    likes = models.IntegerField(default=0)
     watch_count = models.IntegerField(default=0)
     rate = models.PositiveSmallIntegerField(default=0)
-    production_date = models.DateTimeField(null=True)
+    production_date = models.DateField(null=True,blank=True)
     creation_date = models.DateTimeField(auto_now_add=True)
     modification_date = models.DateTimeField(auto_now=True)
+    # banner = models.ImageField()
 
     def __str__(self) -> str:
         return self.name

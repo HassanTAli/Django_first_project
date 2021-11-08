@@ -124,7 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[os.path.join(BASE_DIR,'staticfiles')]
+MEDIA_URL = '/media/'
+
 STATIC_ROOT =  '/home/hassantali/Django/static_root'
+MEDIA_ROOT =  '/home/hassantali/Django/media_root'
+
+STATICFILES_DIRS =[os.path.join(BASE_DIR,'staticfiles')]
+
 
 # \home\hassantali\Django\static_root
