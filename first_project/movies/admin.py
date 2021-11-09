@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Movie, Cast, Categories, Review, ID
 
+class InlineReview(admin.StackedInline):
+    model = Review
+    
 
 class MovieAdmin(admin.ModelAdmin):
     list_filter = ('name',)
@@ -17,6 +20,7 @@ class MovieAdmin(admin.ModelAdmin):
        ["Attachment Section",{'fields': ['banner','video']}],
        ["Section D", {'fields':["casts"]}]
     )
+    inlines =[InlineReview]
     
     
     def custom_list_field(self,obj):

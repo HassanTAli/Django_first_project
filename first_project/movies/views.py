@@ -36,11 +36,14 @@ def movie_detail(req, pk):
 
 def movie_create(req):
     form = MovieForm()
+    
     if req.method == 'POST':
-        form = MovieForm(data=req.POST)
+        form = MovieForm(data=req.POST, files=req.FILES)
         if form.is_valid():
+                      
             form.save()
             return redirect('movie:movie_index')
+        
     return render(req, 'movies/movie_create.html', context={'form': form})
 
 
@@ -57,6 +60,6 @@ def movie_update(req, pk):
         form = MovieForm(data=req.POST,instance=movie)
         if form.is_valid():
             form.save()
-            return redirect('movie:movie-detail', pk=movie.id)
+            return redirect('movie:movie_detail', pk=movie.id)
     
     return render(req, 'movies/movie_update.html', context={'form': form,'movie':movie})

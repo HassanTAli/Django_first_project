@@ -1,8 +1,8 @@
+from django.contrib import admin
 from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
 
-# Create your models here.
 
 class Movie(models.Model):
     active = models.BooleanField(default=True)
@@ -28,6 +28,7 @@ class Review(models.Model):
     def __str__(self):
         return '{} - Review'.format(self.movie)
     
+
 class Cast(models.Model):
     first_name = models.CharField('Actor Name',max_length=255)
     title = models.CharField(max_length=100)
@@ -56,5 +57,4 @@ class Categories(models.Model):
     
     class Meta:
         verbose_name_plural = 'Categories'
-    
     
