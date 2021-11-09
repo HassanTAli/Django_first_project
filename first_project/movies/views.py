@@ -10,8 +10,12 @@ def movie_index(req):
     return render(req, 'movies/movie_index.html', context={'movies': all_movies})
 
 
-def movie_detail(req, movie_id):
-    movie = Movie.objects.get(id=movie_id)
+def movie_detail(req, pk):
+    movie = Movie.objects.get(pk=pk)
+    
+    # movie.casts.all() -> Access many2many for the casts
+    # movie.review_set.all() -> Access Foreign Key relation for the related reviews
+    
     return render(req, 'movies/movie_detail.html', context={'movie': movie})
 
 # def movie_create(req):
@@ -53,6 +57,6 @@ def movie_update(req, pk):
         form = MovieForm(data=req.POST,instance=movie)
         if form.is_valid():
             form.save()
-            return redirect('movie:movie_index')
+            return redirect('movie:movie-detail', pk=movie.id)
     
     return render(req, 'movies/movie_update.html', context={'form': form,'movie':movie})
