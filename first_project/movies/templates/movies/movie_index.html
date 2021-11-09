@@ -18,7 +18,7 @@
     
         <tr>
             <td>{{movie}}</td>
-            <td>{{movie.description}}</td>
+            <td>{{movie.description | truncatewords:5 | title}}</td>
             <td>{{movie.likes}}</td>
             <td>{{movie.watch_count}}</td>
             <td>
