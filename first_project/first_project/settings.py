@@ -140,8 +140,16 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'hassan.tarek.hassan.ali@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'Sh_ha172733'
 
 LOGIN_REDIRECT_URL = '/movie/movie_index'
 LOGOUT_REDIRECT_URL = '/movie/movie_index'
 LOGIN_URL='/accounts/login'
+=======
+EMAIL_HOST_PASSWORD = ''
+
+LOGIN_REDIRECT_URL = '/movie/movie_index'
+LOGOUT_REDIRECT_URL = '/movie/movie_index'
+LOGIN_URL='/accounts/login'
+>>>>>>> 64e29082959b1f50b355e9c817feba11ff5b909d

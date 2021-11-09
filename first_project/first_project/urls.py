@@ -20,7 +20,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
+<<<<<<< HEAD
     path('accounts/',include('accounts.urls')),
+=======
+>>>>>>> 64e29082959b1f50b355e9c817feba11ff5b909d
     path('todo/', include('todo.urls')),
     path('movie/', include('movies.urls')),
 ]
